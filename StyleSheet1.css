@@ -1,6 +1,6 @@
-﻿/* Загальні стилі для сторінки */
+/* Загальні стилі для сторінки */
 body {
-    background-image: url('background.jpg'); /* Фонове зображення */
+    background-image: url('Background.jpg'); /* Фонове зображення */
     background-size: cover; /* Розтягування зображення на весь екран */
     background-attachment: fixed; /* Фіксований фон при прокрутці */
     background-position: center; /* Вирівнювання зображення по центру */
@@ -134,4 +134,3 @@ form {
     form td {
         padding: 10px;
         vertical-align: top;
-    }
