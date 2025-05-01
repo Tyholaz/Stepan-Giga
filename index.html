@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Візитка Степана Гіги</title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+    <style>
+        /* Додаємо мінімально необхідні стилі для нової секції */
+        .discography-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+            .discography-table th, .discography-table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .discography-table th {
+                background-color: #008B8B;
+                color: white;
+            }
+
+            .discography-table tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+    </style>
+</head>
+<body>
+    <!-- Основна таблиця з інформацією -->
+    <table class="main-table">
+        <tr>
+            <td colspan="2" class="table-header">
+                <h1><b>Степан Гіга</b></h1>
+            </td>
+        </tr>
+        <tr>
+            <td class="table-cell" style="width: 65%">
+                <ul class="info-list">
+                    <li><strong>Ім'я:</strong> Степан Гіга</li>
+                    <li><strong>Посада:</strong> Народний артист України</li>
+                    <li><strong>Компанія:</strong> Українська естрада</li>
+                    <li>
+                        <strong>Email:</strong>
+                        <a href="mailto:giga.music@example.com" style="color: #008B8B; text-decoration: none;">giga.music@example.com</a>
+                    </li>
+                    <li><strong>Телефон:</strong> +38 097 123 45 67</li>
+                </ul>
+                <div class="bio-text">
+                    Степан Гіга — український співак, композитор і поет, Народний артист України. Відомий своїми хітами "Цей сон", "Яворина" та багатьма іншими. Його музика стала невід'ємною частиною української естради. За свою кар'єру він створив десятки хітів, які знають і співають по всій Україні.
+                </div>
+            </td>
+            <td class="table-cell photo-cell" style="width: 35%">
+                <img class="photo-frame" src="Photo.jpg" width="330" height="320" alt="Фото Степана Гіги" />
+            </td>
+        </tr>
+    </table>
+
+    <!-- НОВА СЕКЦІЯ: Дискографія -->
+    <table class="main-table">
+        <tr>
+            <td colspan="2" class="table-header">
+                <h2 style="margin: 0;"><b>Дискографія</b></h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="table-cell" colspan="2">
+                <p><b>Основні альбоми Степана Гіги:</b></p>
+                <table class="discography-table">
+                    <tr>
+                        <th>Назва альбому</th>
+                        <th>Рік випуску</th>
+                        <th>Кількість пісень</th>
+                        <th>Популярні композиції</th>
+                    </tr>
+                    <tr>
+                        <td>Яворина</td>
+                        <td>1995</td>
+                        <td>12</td>
+                        <td>"Яворина", "Карпатське весілля"</td>
+                    </tr>
+                    <tr>
+                        <td>Цей сон</td>
+                        <td>1998</td>
+                        <td>14</td>
+                        <td>"Цей сон", "Скрипка грає"</td>
+                    </tr>
+                    <tr>
+                        <td>Золото Карпат</td>
+                        <td>2001</td>
+                        <td>10</td>
+                        <td>"Золото Карпат", "До тебе, мамо"</td>
+                    </tr>
+                    <tr>
+                        <td>Найкраще</td>
+                        <td>2005</td>
+                        <td>16</td>
+                        <td>"Розлучення", "Я люблю тільки тебе"</td>
+                    </tr>
+                    <tr>
+                        <td>Душа Карпат</td>
+                        <td>2008</td>
+                        <td>11</td>
+                        <td>"Душа Карпат", "Сонце любові"</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Таблиця з медіа-контентом у тому ж стилі -->
+    <table class="main-table">
+        <tr>
+            <td colspan="2" class="table-header">
+                <h2 style="margin: 0;"><b>Творчість Степана Гіги</b></h2>
+            </td>
+        </tr>
+        <tr>
+            <td class="table-cell" style="width: 50%">
+                <h3 class="media-title" style="text-align: center;">Слухати на Spotify</h3>
+                <div class="media-item">
+                    <iframe style="border-radius: 12px; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" src="https://open.spotify.com/embed/track/7d0jzbPDzAfpptdL3HcMtn?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </td>
+            <td class="table-cell" style="width: 50%">
+                <h3 class="media-title" style="text-align: center;">Дивитись на YouTube</h3>
+                <div class="media-item">
+                    <iframe style="width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,0.2);" height="352" src="https://www.youtube.com/embed/F8J--vjcNQg?si=FhR2HhLYvM0tDaGd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Форма зворотного зв'язку -->
+    <p style="text-align: center;"><b>Будь-ласка, заповніть форму щоб відправити мені повідомлення.</b></p>
+    <form action="contactForm.php" method="post" id="formal">
+        <table>
+            <tr>
+                <td>Ім'я:</td>
+                <td><input type="text" name="name" id="text"></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Повідомлення:</td>
+                <td><textarea name="message" cols="40" rows="5" id="message"></textarea></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Відправити повідомлення"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

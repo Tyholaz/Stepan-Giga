@@ -1,0 +1,137 @@
+﻿/* Загальні стилі для сторінки */
+body {
+    background-image: url('background.jpg'); /* Фонове зображення */
+    background-size: cover; /* Розтягування зображення на весь екран */
+    background-attachment: fixed; /* Фіксований фон при прокрутці */
+    background-position: center; /* Вирівнювання зображення по центру */
+    font-family: 'Arial', sans-serif; /* Шрифт без зарубок для кращої читабельності */
+    margin: 0; /* Видалення зовнішніх відступів для запобігання небажаних проміжків */
+    padding: 20px; /* Внутрішній відступ для вмісту сторінки */
+}
+
+/* Базові стилі для всіх таблиць */
+table {
+    border-collapse: collapse; /* Об'єднання суміжних рамок для уникнення подвійних ліній */
+    margin: 20px auto; /* Центрування таблиці з відступом згори та знизу */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Тінь для ефекту "підняття" таблиці над фоном */
+    backdrop-filter: blur(5px); /* Розмиття фону під таблицею для кращої читабельності */
+}
+
+/* Стилі для основної таблиці */
+.main-table {
+    background: linear-gradient(to bottom, #7FFFD4, #AFEEEE); /* Градієнтний фон для візуальної глибини */
+    border: 2px solid #20B2AA; /* Рамка таблиці зі світло-морського зеленого кольору */
+    width: 1200px; /* Фіксована ширина для десктопних екранів */
+    max-width: 95%; /* Обмеження ширини для адаптивності на менших екранах */
+}
+
+/* Стилі для заголовка таблиці */
+.table-header {
+    background-color: #20B2AA; /* Бірюзовий фон для заголовка */
+    color: white; /* Білий текст для контрасту з фоном */
+    text-align: center; /* Центрування тексту заголовка */
+    padding: 15px; /* Внутрішній відступ для простору навколо тексту */
+    border-bottom: 2px solid #008B8B; /* Нижня рамка темнішого відтінку для розділення */
+}
+
+    /* Стилі для заголовка h1 всередині шапки таблиці */
+    .table-header h1 {
+        margin: 0; /* Видалення стандартних відступів від заголовка */
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Тінь тексту для об'ємності */
+    }
+
+/* Стилі для комірок таблиці */
+.table-cell {
+    border: 1px solid #5F9EA0; /* Тонка рамка кольору cadetblue */
+    padding: 15px; /* Внутрішній відступ для комфортного розміщення вмісту */
+    background-color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий фон для читабельності */
+}
+
+/* Стилі для списку інформації */
+.info-list {
+    list-style-type: none; /* Видалення маркерів списку */
+    padding-left: 5px; /* Зменшення лівого відступу */
+}
+
+    /* Стилі для елементів списку */
+    .info-list li {
+        margin-bottom: 12px; /* Відступ між елементами списку */
+        padding-left: 10px; /* Внутрішній відступ зліва */
+        border-left: 3px solid #20B2AA; /* Декоративна вертикальна лінія зліва */
+    }
+
+/* Стилі для біографічного тексту */
+.bio-text {
+    padding: 15px; /* Внутрішній відступ навколо тексту */
+    line-height: 1.6; /* Збільшена висота рядка для кращої читабельності */
+    text-align: justify; /* Вирівнювання тексту по ширині */
+    border-top: 1px dashed #5F9EA0; /* Декоративна пунктирна лінія зверху */
+    margin-top: 15px; /* Відступ від попереднього елемента */
+}
+
+/* Стилі для комірки з фотографією */
+.photo-cell {
+    text-align: center; /* Центрування фото по горизонталі */
+    vertical-align: middle; /* Центрування фото по вертикалі */
+}
+
+/* Стилі для рамки фотографії */
+.photo-frame {
+    border: 5px solid white; /* Біла рамка навколо фото */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Тінь для ефекту глибини */
+    max-width: 100%; /* Обмеження ширини для адаптивності */
+    height: auto; /* Автоматична висота для збереження пропорцій */
+}
+
+/* Стилі для заголовків медіа-блоків */
+.media-title {
+    font-size: 1.5em; /* Збільшений розмір шрифту */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Легка тінь для об'ємності */
+    margin-top: 0; /* Видалення верхнього відступу */
+}
+
+/* Стилі для медіа-елементів */
+.media-item {
+    margin-bottom: 10px; /* Нижній відступ */
+}
+
+/* Стилі для форми зворотного зв'язку */
+form {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+    form table {
+        width: 100%;
+        background: linear-gradient(to bottom, #7FFFD4, #AFEEEE);
+        border: 2px solid #20B2AA;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #5F9EA0;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    form input[type="submit"] {
+        background-color: #20B2AA;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+        form input[type="submit"]:hover {
+            background-color: #008B8B;
+        }
+
+    form td {
+        padding: 10px;
+        vertical-align: top;
+    }
