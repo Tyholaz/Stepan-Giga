@@ -1,25 +1,44 @@
 /* Загальні стилі для сторінки */
 body {
-    background-image: url('Background.jpg'); /* Фонове зображення */
-    background-size: cover; /* Розтягування зображення на весь екран */
-    background-attachment: fixed; /* Фіксований фон при прокрутці */
-    background-position: center; /* Вирівнювання зображення по центру */
-    font-family: 'Arial', sans-serif; /* Шрифт без зарубок для кращої читабельності */
+    /* Використання різних підходів для фонового зображення */
+    background: url('Background.jpg') center center fixed; /* Скорочений запис для більшості браузерів */
+    -webkit-background-size: cover; /* Safari 3-8 */
+    -moz-background-size: cover; /* Firefox 3.6-15 */
+    -o-background-size: cover; /* Opera 11.1-12 */
+    background-size: cover; /* Стандартна властивість */
+    font-family: Arial, Helvetica, sans-serif; /* Альтернативні шрифти для різних ОС */
     margin: 0; /* Видалення зовнішніх відступів для запобігання небажаних проміжків */
     padding: 20px; /* Внутрішній відступ для вмісту сторінки */
+}
+
+/* Резервний стиль для браузерів, які не підтримують background-size: cover або мають проблеми з зображеннями */
+html { 
+    min-height: 100%;
+    background-color: #AFEEEE; /* Світло-бірюзовий резервний колір */
 }
 
 /* Базові стилі для всіх таблиць */
 table {
     border-collapse: collapse; /* Об'єднання суміжних рамок для уникнення подвійних ліній */
     margin: 20px auto; /* Центрування таблиці з відступом згори та знизу */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Тінь для ефекту "підняття" таблиці над фоном */
-    backdrop-filter: blur(5px); /* Розмиття фону під таблицею для кращої читабельності */
+    -webkit-box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Safari, Chrome */
+    -moz-box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Firefox */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Стандартна властивість */
+    /* Властивість backdrop-filter з префіксами */
+    -webkit-backdrop-filter: blur(5px); /* Safari */
+    backdrop-filter: blur(5px); /* Стандартна властивість */
+    /* Альтернатива для браузерів без підтримки backdrop-filter */
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* Стилі для основної таблиці */
 .main-table {
-    background: linear-gradient(to bottom, #7FFFD4, #AFEEEE); /* Градієнтний фон для візуальної глибини */
+    /* Використання префіксів для градієнта */
+    background: #7FFFD4; /* Резервний колір для старих браузерів */
+    background: -webkit-linear-gradient(top, #7FFFD4, #AFEEEE); /* Safari 5.1-6, Chrome 10+ */
+    background: -moz-linear-gradient(top, #7FFFD4, #AFEEEE); /* Firefox 3.6-15 */
+    background: -o-linear-gradient(top, #7FFFD4, #AFEEEE); /* Opera 11.1-12 */
+    background: linear-gradient(to bottom, #7FFFD4, #AFEEEE); /* Стандартний синтаксис */
     border: 2px solid #20B2AA; /* Рамка таблиці зі світло-морського зеленого кольору */
     width: 1200px; /* Фіксована ширина для десктопних екранів */
     max-width: 95%; /* Обмеження ширини для адаптивності на менших екранах */
@@ -34,11 +53,13 @@ table {
     border-bottom: 2px solid #008B8B; /* Нижня рамка темнішого відтінку для розділення */
 }
 
-    /* Стилі для заголовка h1 всередині шапки таблиці */
-    .table-header h1 {
-        margin: 0; /* Видалення стандартних відступів від заголовка */
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Тінь тексту для об'ємності */
-    }
+/* Стилі для заголовка h1 всередині шапки таблиці */
+.table-header h1 {
+    margin: 0; /* Видалення стандартних відступів від заголовка */
+    -webkit-text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Safari */
+    -moz-text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Firefox */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Стандартна властивість */
+}
 
 /* Стилі для комірок таблиці */
 .table-cell {
@@ -51,14 +72,15 @@ table {
 .info-list {
     list-style-type: none; /* Видалення маркерів списку */
     padding-left: 5px; /* Зменшення лівого відступу */
+    margin: 0; /* Нульовий зовнішній відступ для IE */
 }
 
-    /* Стилі для елементів списку */
-    .info-list li {
-        margin-bottom: 12px; /* Відступ між елементами списку */
-        padding-left: 10px; /* Внутрішній відступ зліва */
-        border-left: 3px solid #20B2AA; /* Декоративна вертикальна лінія зліва */
-    }
+/* Стилі для елементів списку */
+.info-list li {
+    margin-bottom: 12px; /* Відступ між елементами списку */
+    padding-left: 10px; /* Внутрішній відступ зліва */
+    border-left: 3px solid #20B2AA; /* Декоративна вертикальна лінія зліва */
+}
 
 /* Стилі для біографічного тексту */
 .bio-text {
@@ -78,7 +100,9 @@ table {
 /* Стилі для рамки фотографії */
 .photo-frame {
     border: 5px solid white; /* Біла рамка навколо фото */
-    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Тінь для ефекту глибини */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Safari, Chrome */
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Firefox */
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); /* Стандартна властивість */
     max-width: 100%; /* Обмеження ширини для адаптивності */
     height: auto; /* Автоматична висота для збереження пропорцій */
 }
@@ -86,7 +110,9 @@ table {
 /* Стилі для заголовків медіа-блоків */
 .media-title {
     font-size: 1.5em; /* Збільшений розмір шрифту */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Легка тінь для об'ємності */
+    -webkit-text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Safari */
+    -moz-text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Firefox */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Стандартна властивість */
     margin-top: 0; /* Видалення верхнього відступу */
 }
 
@@ -101,36 +127,83 @@ form {
     max-width: 600px;
 }
 
-    form table {
-        width: 100%;
-        background: linear-gradient(to bottom, #7FFFD4, #AFEEEE);
-        border: 2px solid #20B2AA;
+form table {
+    width: 100%;
+    background: #7FFFD4; /* Резервний колір */
+    background: -webkit-linear-gradient(top, #7FFFD4, #AFEEEE); /* Safari 5.1-6, Chrome 10+ */
+    background: -moz-linear-gradient(top, #7FFFD4, #AFEEEE); /* Firefox 3.6-15 */
+    background: -o-linear-gradient(top, #7FFFD4, #AFEEEE); /* Opera 11.1-12 */
+    background: linear-gradient(to bottom, #7FFFD4, #AFEEEE); /* Стандартний синтаксис */
+    border: 2px solid #20B2AA;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #5F9EA0;
+    -webkit-border-radius: 4px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 4px; /* Firefox 3.6-15 */
+    border-radius: 4px; /* Стандартна властивість */
+    -webkit-box-sizing: border-box; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-box-sizing: border-box; /* Firefox, інші на базі Gecko */
+    box-sizing: border-box; /* Стандартна властивість */
+}
+
+form input[type="submit"] {
+    background-color: #20B2AA;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    -webkit-border-radius: 4px; /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -moz-border-radius: 4px; /* Firefox 3.6-15 */
+    border-radius: 4px; /* Стандартна властивість */
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form input[type="submit"]:hover {
+    background-color: #008B8B;
+}
+
+form td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+/* Стилі для IE8 та старіших версій - додаємо фіксований фон для сторінки, якщо не працює background-size */
+@media \0screen {
+    body {
+        background: #AFEEEE;
     }
+}
 
-    form input[type="text"],
-    form input[type="email"],
-    form textarea {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #5F9EA0;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    form input[type="submit"] {
-        background-color: #20B2AA;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-        form input[type="submit"]:hover {
-            background-color: #008B8B;
-        }
-
-    form td {
+/* Медіа-запити для адаптивності на різних пристроях */
+@media screen and (max-width: 768px) {
+    body {
         padding: 10px;
-        vertical-align: top;
+    }
+    
+    .main-table {
+        width: 100%;
+    }
+    
+    .photo-frame {
+        max-width: 90%;
+    }
+}
+
+/* Виправлення для старих версій Firefox */
+@-moz-document url-prefix() {
+    .table-header {
+        background-color: #20B2AA !important;
+    }
+}
+
+/* Для Internet Explorer 10+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+        background-attachment: scroll;
+    }
+}
